@@ -21,6 +21,29 @@ const runner = new TestRunner(config);
 
 const accounts = [];
 
+// Set up a lazy loading proxy and cache for artifacts so that we can use
+// artifacts even before the `initialize()` async function finishes.
+const artifactsCache = {};
+const artifactsProxy = {
+    require(importPath) {
+        const getHandler = (target, prop) => {
+            if (!global.originalArtifacts) {
+                return null;
+            }
+
+            if (!artifactsCache[importPath]) {
+                artifactsCache[importPath] = global.originalArtifacts.require(importPath);
+            }
+
+            return artifactsCache[importPath][prop];
+        };
+
+        return new Proxy({ importPath }, { get: getHandler });
+    },
+};
+global.artifacts = artifactsProxy;
+
+// Most of the ff. code is copied from `@truffle/core/lib/testing/Test.js'
 async function initialize() {
     console.log('Initializing truffle test environment...');
 
