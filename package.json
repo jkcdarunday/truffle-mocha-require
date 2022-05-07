@@ -1,0 +1,27 @@
+{
+  "name": "truffle-mocha-require",
+  "version": "1.0.0",
+  "description": "A script that initializes Truffle's test environment so that you can run Mocha on Truffle tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkcdarunday/truffle-mocha-require.git"
+  },
+  "keywords": [
+    "truffle",
+    "mocha",
+    "test",
+    "require",
+    "native",
+    "intellij"
+  ],
+  "author": "Jan Keith Darunday <jkcdarunday@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jkcdarunday/truffle-mocha-require/issues"
+  },
+  "homepage": "https://github.com/jkcdarunday/truffle-mocha-require#readme"
+}
