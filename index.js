@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
 const { Web3Shim, createInterfaceAdapter } = require('@truffle/interface-adapter');
 const Config = require('@truffle/config');
 const Resolver = require('@truffle/resolver');
