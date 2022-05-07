@@ -23,5 +23,15 @@
   "bugs": {
     "url": "https://github.com/jkcdarunday/truffle-mocha-require/issues"
   },
-  "homepage": "https://github.com/jkcdarunday/truffle-mocha-require#readme"
+  "homepage": "https://github.com/jkcdarunday/truffle-mocha-require#readme",
+  "dependencies": {
+    "@truffle/codec": "^0.12.11",
+    "@truffle/config": "^1.3.28",
+    "@truffle/core": "^5.5.13",
+    "@truffle/debugger": "^10.0.9",
+    "@truffle/interface-adapter": "^0.5.16",
+    "@truffle/resolver": "^8.0.20",
+    "debug": "^4.3.4",
+    "mocha": "^10.0.0"
+  }
 }
