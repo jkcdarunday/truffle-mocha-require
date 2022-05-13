@@ -4,7 +4,6 @@ const Resolver = require('@truffle/resolver');
 const Codec = require('@truffle/codec');
 const debug = require('debug')('lib:test');
 const Debugger = require('@truffle/debugger');
-const mocha = require('mocha');
 const TestRunner = require('@truffle/core/lib/testing/TestRunner');
 const Test = require('@truffle/core/lib/testing/Test');
 
@@ -93,6 +92,8 @@ async function initialize() {
         bugger,
     });
 
+    global.originalArtifacts = artifacts;
+
     console.log('Successfully initialized truffle environment!');
 }
 
@@ -117,19 +118,19 @@ function prepareContractMethod() {
     };
 
     global.contract = function (name, tests) {
-        mocha.describe(`Contract: ${name}`, function () {
+        describe(`Contract: ${name}`, function () {
             template.bind(this, tests)();
         });
     };
 
     global.contract.only = function (name, tests) {
-        mocha.describe.only(`Contract: ${name}`, function () {
+        describe.only(`Contract: ${name}`, function () {
             template.bind(this, tests)();
         });
     };
 
     global.contract.skip = function (name, tests) {
-        mocha.describe.skip(`Contract: ${name}`, function () {
+        describe.skip(`Contract: ${name}`, function () {
             template.bind(this, tests)();
         });
     };
