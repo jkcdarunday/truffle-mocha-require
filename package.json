@@ -1,6 +1,6 @@
 {
   "name": "truffle-mocha-require",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A script that initializes Truffle's test environment so that you can run Mocha on Truffle tests",
   "main": "index.js",
   "scripts": {
